@@ -1,1 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Светлые Сны - Каталог номеров</title>
+</head>
+<body class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3">
+        <a href="#catalog" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <span class="fs-4 mx-2 fw-medium">Светлые Сны</span>
+        </a>
+        <ul class="nav">
+            <li class="nav-item"><a href="#" class="nav-link">Приезжайте как гости, уезжайте как друзья!</a></li>
+        </ul>
+    </header>
 
+    <main>
+        <!-- Страница каталога -->
+        <div id="page-catalog" class="page">
+            <div class="d-flex justify-content-between flex-wrap">
+                <h1>Каталог номеров</h1>
+                <div class="filter-container"></div>
+            </div>
+            <div class="d-flex justify-content-around flex-wrap align-items-center rooms-container"></div>
+        </div>
+
+        <!-- Страница бронирования -->
+        <div id="page-order" class="page" style="display:none;">
+            <div class="order-container"></div>
+        </div>
+
+        <!-- Страница администратора -->
+        <div id="page-admin" class="page" style="display:none;">
+            <div class="admin-container"></div>
+        </div>
+
+        <!-- Страница входа -->
+        <div id="page-login" class="page" style="display:none;">
+            <div class="login-container"></div>
+        </div>
+    </main>
+
+    <footer class="py-2 my-2">
+        <ul class="nav justify-content-between align-items-center">
+            <li class="nav-item"><a href="#" class="nav-link text-body-secondary">ул. г.Москва, ул. Ивовая, 48</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-body-secondary">Время работы: Пн-Пт, с 8:00-17:00</a></li>
+            <li class="nav-item"><a href="tel:88005553535" class="nav-link text-body-secondary">тел. 8 (800) 555 - 35 - 35</a></li>
+            <li class="nav-item"><a href="mailto:обращения@СветлыеСны.рф" class="nav-link text-body-secondary">Email: обращения@СветлыеСны.рф</a></li>
+        </ul>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.slim.min.js"></script>
+    <script src="js/jquery.inputmask.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
