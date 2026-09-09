@@ -6,53 +6,115 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <title>Светлые Сны - Каталог номеров</title>
+    <title>Светлые Сны - Гостиница</title>
+    <style>
+        /* Дополнительные стили для SPA */
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .page.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card {
+            width: 100%;
+            max-width: 30rem;
+            margin: 1rem 0;
+        }
+        .pagination-wrapper {
+            width: 100%;
+        }
+        .filter-container form {
+            padding: 0.5rem;
+            background: transparent;
+            box-shadow: none;
+            margin: 0;
+        }
+        .rooms-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .rooms-container .card {
+            flex: 0 1 30rem;
+        }
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+        @media (max-width: 768px) {
+            .rooms-container .card {
+                flex: 0 1 100%;
+            }
+            .filter-container form {
+                flex-direction: column;
+                align-items: stretch !important;
+            }
+            .filter-container form .btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body class="container">
+    <!-- Toast контейнер для уведомлений -->
+    <div class="toast-container"></div>
+
+    <!-- ========== HEADER ========== -->
     <header class="d-flex flex-wrap justify-content-center py-3">
         <a href="#catalog" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <span class="fs-4 mx-2 fw-medium">Светлые Сны</span>
+            <span class="fs-4 mx-2 fw-medium">🌙 Светлые Сны</span>
         </a>
-        <ul class="nav">
+        <ul class="nav" id="mainNav">
             <li class="nav-item"><a href="#" class="nav-link">Приезжайте как гости, уезжайте как друзья!</a></li>
         </ul>
     </header>
 
+    <!-- ========== MAIN ========== -->
     <main>
-        <!-- Страница каталога -->
-        <div id="page-catalog" class="page">
-            <div class="d-flex justify-content-between flex-wrap">
-                <h1>Каталог номеров</h1>
-                <div class="filter-container"></div>
+        <!-- ===== СТРАНИЦА КАТАЛОГА ===== -->
+        <div id="page-catalog" class="page active">
+            <div class="d-flex justify-content-between flex-wrap align-items-center mb-3">
+                <h1>🏨 Каталог номеров</h1>
+                <div class="filter-container w-100 w-md-auto"></div>
             </div>
-            <div class="d-flex justify-content-around flex-wrap align-items-center rooms-container"></div>
+            <div class="rooms-container"></div>
         </div>
 
-        <!-- Страница бронирования -->
-        <div id="page-order" class="page" style="display:none;">
+        <!-- ===== СТРАНИЦА БРОНИРОВАНИЯ ===== -->
+        <div id="page-order" class="page">
             <div class="order-container"></div>
         </div>
 
-        <!-- Страница администратора -->
-        <div id="page-admin" class="page" style="display:none;">
+        <!-- ===== СТРАНИЦА АДМИНИСТРАТОРА ===== -->
+        <div id="page-admin" class="page">
             <div class="admin-container"></div>
         </div>
 
-        <!-- Страница входа -->
-        <div id="page-login" class="page" style="display:none;">
+        <!-- ===== СТРАНИЦА ВХОДА ===== -->
+        <div id="page-login" class="page">
             <div class="login-container"></div>
         </div>
     </main>
 
-    <footer class="py-2 my-2">
-        <ul class="nav justify-content-between align-items-center">
-            <li class="nav-item"><a href="#" class="nav-link text-body-secondary">ул. г.Москва, ул. Ивовая, 48</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-body-secondary">Время работы: Пн-Пт, с 8:00-17:00</a></li>
-            <li class="nav-item"><a href="tel:88005553535" class="nav-link text-body-secondary">тел. 8 (800) 555 - 35 - 35</a></li>
-            <li class="nav-item"><a href="mailto:обращения@СветлыеСны.рф" class="nav-link text-body-secondary">Email: обращения@СветлыеСны.рф</a></li>
+    <!-- ========== FOOTER ========== -->
+    <footer class="py-2 my-2 border-top">
+        <ul class="nav justify-content-between align-items-center flex-wrap">
+            <li class="nav-item"><a href="#" class="nav-link text-body-secondary">📍 г. Москва, ул. Ивовая, 48</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-body-secondary">🕐 Пн-Пт, с 8:00-17:00</a></li>
+            <li class="nav-item"><a href="tel:88005553535" class="nav-link text-body-secondary">📞 8 (800) 555-35-35</a></li>
+            <li class="nav-item"><a href="mailto:обращения@СветлыеСны.рф" class="nav-link text-body-secondary">✉️ обращения@СветлыеСны.рф</a></li>
         </ul>
     </footer>
 
+    <!-- ========== SCRIPTS ========== -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-3.7.1.slim.min.js"></script>
     <script src="js/jquery.inputmask.min.js"></script>
