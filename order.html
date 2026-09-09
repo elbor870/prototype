@@ -1,1 +1,22 @@
-
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; url=index.html#order">
+    <title>Перенаправление...</title>
+    <script>
+        // Получаем параметры из URL
+        const params = new URLSearchParams(window.location.search);
+        const roomId = params.get('room_id');
+        let url = 'index.html#order';
+        if (roomId) {
+            url += '?room_id=' + roomId;
+        }
+        window.location.href = url;
+    </script>
+</head>
+<body>
+    <p>Перенаправление на страницу бронирования... <a href="index.html#order">Нажмите здесь</a></p>
+</body>
+</html>
